@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "fevereiro",
     "março",
     "abril",
+    "maio",
     "junho",
     "julho",
     "agosto",
@@ -19,31 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("ano").innerHTML = ano;
 
     let firstDayOfWeek = new Date(ano, mes, 1).getDay() - 1;
-    let getLastDayThisMonth = new Date(ano, mes + 1, 0).getDate();
 
-    for (
-      var i = -firstDayOfWeek, index = 0;
-      i < 42 - firstDayOfWeek;
-      i++, index++
-    ) {
+    let getLastDayThisMonth = new Date(ano, mes + 1, 0).getDate();
+    let currentDay = new Date().getDay();
+
+    for (var i = -firstDayOfWeek; i < 42 - firstDayOfWeek; i++) {
       let dt = new Date(ano, mes, i);
-      let dayTable = tableDays.getElementsByTagName("td")[index];
-      dayTable.classList.remove("mes-anterior");
-      dayTable.classList.remove("proximo-mes");
-      dayTable.classList.remove("dia-atual");
-      dayTable.innerHTML = dt.getDate();
-      if (
-        dt.getFullYear == dt.getFullYear() &&
-        dt.getMonth() == dt.getMonth() &&
-        dt.getDate() == dt.getDate()
-      ) {
-        dayTable.classList.add("dia-atual");
-      }
-      if (i < 1) {
-        dayTable.classList.add("mes-anterior");
-      }
-      if (i > getLastDayThisMonth) {
-        dayTable.classList.add("proximo-mes");
+      let dayTable = tableDays.getElementsByTagName("td")[i];
+      if (dayTable) {
+        const tdClassList = dayTable.classList;
+        tdClassList.remove("mes-anterior");
+        tdClassList.remove("proximo-mes");
+        tdClassList.remove("dia-atual");
+        dayTable.innerHTML = dt.getDate();
+
+        if (i < 1) {
+          tdClassList.add("mes-anterior");
+        }
+        if (i > getLastDayThisMonth) {
+          tdClassList.add("proximo-mes");
+        }
+        if (currentDay) {
+          if (dayTable.innerHTML == currentDay) {
+            if (!tdClassList.contains("proximo-mes")) {
+              if (now.getMonth() === mes && now.getFullYear() === ano) {
+                tdClassList.add("dia-atual");
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -56,14 +61,19 @@ document.addEventListener("DOMContentLoaded", function () {
   botao_proximo.onclick = function () {
     mes++;
 
-    ano++;
+    if (mes === 12) {
+      mes = 0;
+      ano++;
+    }
     GetDaysCalendar(mes, ano);
   };
   botao_anterior.onclick = function () {
     mes--;
+    if (mes === -1) {
+      mes = 11;
+      ano--;
+    }
 
-    mes = 11;
-    ano--;
     GetDaysCalendar(mes, ano);
   };
 });

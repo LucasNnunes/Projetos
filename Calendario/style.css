@@ -28,15 +28,16 @@ h2 {
 .btn-pro {
   position: absolute;
   top: 50%;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
+  line-height: 45px;
   margin-top: -16px;
   border: 2px solid #cbd1d2;
   border-radius: 50%;
   color: #cbd1d2;
   font-size: 16px;
   font-weight: bold;
+  align-items: center;
+  width: 52px;
+  height: 48px;
 }
 .btn-ant {
   left: 80px;
@@ -48,6 +49,7 @@ h2 {
 .btn-pro:hover {
   background: #cbd1d2;
   color: #f9f9f9;
+  cursor: pointer;
 }
 table {
   margin-top: 20px;
@@ -78,28 +80,7 @@ table {
   background: #c0addf;
   color: #f9f9f9;
 }
-.calendario .mes-anterior:hover,
-.calendario .proximo-mes :hover {
+.calendario .mes-anterior,
+.calendario .proximo-mes {
   background: whitesmoke;
-}
-.event {
-  position: relative;
-}
-.event::after {
-  content: "";
-  width: 7px;
-  height: 7px;
-  left: 50%;
-  bottom: 7px;
-  margin: -3.5px 00 -3.5px;
-  background: #00addf;
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-}
-.event:hover::after {
-  background: #f9f9f9;
-}
-.event.dia-atual:after {
-  background: #f9f9f9;
 }
