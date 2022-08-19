@@ -46,3 +46,40 @@ img {
   width: 45vh;
   height: 25vh;
 }
+.inserir-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 45%;
+}
+.descricao {
+  border-radius: 15px;
+  width: 46vh;
+  height: 25vh;
+  max-width: 46vh;
+  min-width: 23vh;
+  max-height: 25vh;
+  min-height: 12.5;
+}
+.titulo-p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 45vh;
+}
+
+.botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

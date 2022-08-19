@@ -116,6 +116,36 @@
             </label>
           </div>
         </article>
+
+        <form class="inserir-texto" onsubmit="return false;">
+          <label for="titulo">
+            <input
+              class="titulo-p"
+              type="text"
+              name="texto"
+              placeholder="titulo"
+              required
+            />
+            <textarea class="descricao" name="textarea" required></textarea>
+            <br />
+            <input
+              type="file"
+              accept="image/*"
+              onchange="loadFile(event)"
+              required
+            />
+            <br />
+
+            <br />
+            <input
+              class="botao"
+              type="submit"
+              name="enviar-a"
+              value="Enviar"
+              onclick="criarArtigo()"
+            />
+          </label>
+        </form>
       </section>
     </section>
   </body>
