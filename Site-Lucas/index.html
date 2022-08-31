@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Meu Site</title>
+  </head>
+  <body>
+    <section class="container">
+      <div>
+        <h2 class="titulo">Jogos que eu gosto...</h2>
+      </div>
+      <section class="about-games">
+        <article class="article-about-games">
+          <h2>Elden Ring</h2>
+          <h3>Descrição:</h3>
+          <p>
+            Um jogo no estilo Dark Souls,<br />
+            com uma história própria. Falo por mim, por não ter jogado<br />
+            qualquer outro tipo de souls like(como é chamado os jogos nesse
+            estilo).
+          </p>
+          <img
+            src="https://sm.ign.com/t/ign_br/news/e/elden-ring/elden-ring-is-currently-one-of-the-best-reviewed-games-in-mo_te96.1200.jpg"
+          />
+          <form>
+            <label for="user-1">
+              <input type="radio" id="user-1" name="opcao" value="op1" />Gostou
+              dessa informação?</label
+            >
+            <label for="user-2"
+              ><input type="radio" id="user-2" name="opcao" value="op2" />Não
+              foi útil a você?
+            </label>
+          </form>
+        </article>
+
+        <article class="article-about-games">
+          <h2>Fortnite</h2>
+          <h3>Descrição:</h3>
+          <p>
+            Fortnite, jogo de battle royale que consiste em 100 pessoas<br />
+            cairem em um mapa, pegarem itens espalhados por esse mapa e <br />só
+            1 sair vencedor dessa intensa batalha.
+          </p>
+          <img
+            src="https://s2.glbimg.com/HkbPmZ-XAp7etX7-EdobwuuI_Vw=/0x0:754x425/924x0/smart/filters:strip_icc()/s.glbimg.com/es/ge/f/original/2018/03/22/fortnite.png"
+          />
+          <form>
+            <label for="user-3">
+              <input type="radio" id="user-3" name="opcao" value="op3" />Gostou
+              dessa informação?</label
+            >
+            <label for="user-4"
+              ><input type="radio" id="user-4" name="opcao" value="op4" />Não
+              foi útil a você?
+            </label>
+          </form>
+        </article>
+
+        <article class="article-about-games">
+          <h2>Valorant</h2>
+          <h3>Descrição:</h3>
+          <p>
+            Valorant, é um estilo de jogo inspirado em Counter Strike(mais
+            conhecido como CS)<br />
+            onde 5 jogadores ficam em um mapa, de 2 times,<br />
+            um defensor e o outro atacante, rebelde, enfim... <br />quem ganhar
+            13 rounds vence a partida, em caso de empate,no placar de 12 a
+            12,<br />
+            haverá uma prorrogação que só será finalizada<br />
+            após um time ganhar 2 rounds seguidos/ um time estiver com 2 rounds
+            de diferença.
+          </p>
+          <img
+            src="https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/5a52c72d-80fc-4c3f-bc24-52b09ab9896a_2560x1440-12a1d9b80efd050055faa72feee71f8e"
+          />
+          <div>
+            <label for="user-5">
+              <input type="radio" id="user-5" name="opcao" value="op5" />Gostou
+              dessa informação?</label
+            >
+            <label for="user-6"
+              ><input type="radio" id="user-6" name="opcao" value="op6" />Não
+              foi útil a você?
+            </label>
+          </div>
+        </article>
+
+        <article class="article-about-games">
+          <h2>Wild Rift</h2>
+          <h3>Descrição:</h3>
+          <p>
+            Wild Rift, é um jogo inspirado em league of legends, criado para
+            aplicativos mobile,<br />
+            ou seja,<br />
+            celulares,tablets enfim...<br />
+            onde 5 campões distribuidos em 4 rotas,<br />
+            lutam para ver quem consegue <br />destruir o inibidor adversário
+            primero.
+          </p>
+          <img
+            src="https://www.riotgames.com/darkroom/1440/08bcc251757a1f64e30e0d7e8c513d35:be16374e056f8268996ef96555c7a113/wr-cb1-announcementarticle-banner-1920x1080.png"
+          />
+          <div>
+            <label for="user-7">
+              <input type="radio" id="user-7" name="opcao" value="op7" />Gostou
+              dessa informação?</label
+            >
+            <label for="user-8"
+              ><input type="radio" id="user-8" name="opcao" value="op8" />Não
+              foi útil a você?
+            </label>
+          </div>
+        </article>
+
+        <form class="inserir-texto" onsubmit="return false;">
+          <label for="titulo">
+            <input
+              class="titulo-p"
+              type="text"
+              name="texto"
+              placeholder="titulo"
+              required
+            />
+            <textarea class="descricao" name="textarea" required></textarea>
+            <br />
+            <input
+              type="file"
+              accept="image/*"
+              onchange="loadFile(event)"
+              required
+            />
+            <br />
+
+            <br />
+            <input
+              class="botao"
+              type="submit"
+              name="enviar-a"
+              value="Enviar"
+              onclick="criarArtigo()"
+            />
+          </label>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>
